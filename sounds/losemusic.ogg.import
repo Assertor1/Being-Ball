@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/losemusic.ogg-685a7b11c50381dd2430b8bd807f25a2.oggstr"
+
+[deps]
+
+source_file="res://sounds/losemusic.ogg"
+dest_files=[ "res://.import/losemusic.ogg-685a7b11c50381dd2430b8bd807f25a2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

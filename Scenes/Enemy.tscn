@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://textures/Leather011_2K_Normal.jpg" type="Texture" id=1]
+
+[sub_resource type="SphereMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.2, 0.764706, 0.807843, 1 )
+metallic = 0.5
+roughness = 0.8
+normal_enabled = true
+normal_scale = -16.0
+normal_texture = ExtResource( 1 )
+uv1_scale = Vector3( 0.4, 0.4, 0.4 )
+uv1_triplanar = true
+
+[sub_resource type="SphereShape" id=3]
+radius = 0.781481
+
+[node name="Enemy" type="Area"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 3 )

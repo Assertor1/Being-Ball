@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/PottaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://sounds/startmusic.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Button
+
+
+func _ready():
+	pass
+
+
+func _on_playButton_pressed():
+	get_tree().change_scene(\"res://Scenes/Level1.tscn\")
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.381
+anchor_bottom = 1.253
+margin_top = 2.0
+margin_right = -0.144043
+margin_bottom = 0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0.101961, 0.360784, 0.529412, 1 )
+margin_right = 1045.0
+margin_bottom = 580.0
+rect_scale = Vector2( 1.34934, 1.30324 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_scale = Vector2( 1.36866, 1.24888 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.909804, 0.0941176, 0.0941176, 1 )
+custom_colors/font_outline_modulate = Color( 0.0470588, 0.0627451, 0.901961, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "      
+	           BEING   BALL!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="playButton" type="Button" parent="."]
+margin_left = 508.0
+margin_top = 326.0
+margin_right = 887.0
+margin_bottom = 552.0
+rect_scale = Vector2( 0.972414, 0.732471 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0.831373, 0.101961, 0.72549, 1 )
+custom_colors/font_color = Color( 0.74902, 0.0980392, 0.682353, 1 )
+custom_colors/font_color_hover = Color( 0.435294, 0.858824, 0.0980392, 1 )
+custom_colors/font_color_pressed = Color( 0.984314, 0.113725, 0.113725, 1 )
+text = "PLAY"
+flat = true
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+[connection signal="pressed" from="playButton" to="playButton" method="_on_playButton_pressed"]

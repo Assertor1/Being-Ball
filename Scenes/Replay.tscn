@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/PottaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scripts/replayButton.gd" type="Script" id=2]
+[ext_resource path="res://sounds/losemusic.ogg" type="AudioStream" id=3]
+[ext_resource path="res://textures/Moss002_2K_AmbientOcclusion.jpg" type="Texture" id=4]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 70
+font_data = ExtResource( 1 )
+
+[node name="Replay" type="Control"]
+anchor_right = 1.295
+anchor_bottom = 1.253
+margin_right = -0.0800781
+margin_bottom = 0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 498, 88 )
+texture = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1320.0
+margin_bottom = 750.0
+color = Color( 0.0862745, 0.341176, 0.639216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1322.0
+margin_bottom = 754.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.960784, 0.0823529, 0.0823529, 1 )
+custom_colors/font_outline_modulate = Color( 0.968627, 0.913725, 0.913725, 1 )
+text = "       
+	       YOU   LOOSE!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="replayButton" type="Button" parent="."]
+margin_left = 410.0
+margin_top = 316.0
+margin_right = 908.0
+margin_bottom = 446.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.839216, 0.917647, 0.0823529, 1 )
+custom_colors/font_color_hover = Color( 0.0901961, 0.909804, 0.2, 1 )
+custom_colors/font_color_pressed = Color( 0.917647, 0.0705882, 0.921569, 1 )
+text = "REPLAY!"
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="loseMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 498.0
+margin_top = 478.0
+margin_right = 824.0
+margin_bottom = 598.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.886275, 0.0901961, 1 )
+custom_colors/font_color_hover = Color( 0.2, 0.898039, 0.101961, 1 )
+custom_colors/font_color_pressed = Color( 0.901961, 0.0941176, 0.831373, 1 )
+text = "Menu"
+flat = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="replayButton" to="replayButton" method="_on_replayButton_pressed"]
+[connection signal="pressed" from="Menu" to="Menu" method="_on_Menu_pressed"]

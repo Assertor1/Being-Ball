@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/aura.ogg-c6336c4e225cc012e6a215b1f0862961.oggstr"
+
+[deps]
+
+source_file="res://sounds/aura.ogg"
+dest_files=[ "res://.import/aura.ogg-c6336c4e225cc012e6a215b1f0862961.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

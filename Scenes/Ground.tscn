@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://textures/Moss002_2K_AmbientOcclusion.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/Moss002_2K_Color.jpg" type="Texture" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.956863, 0.964706, 0.0470588, 1 )
+albedo_texture = ExtResource( 3 )
+metallic = 0.59
+roughness = 0.7
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+uv1_scale = Vector3( 2, 2, 2 )
+uv1_triplanar = true
+
+[node name="Ground" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 40, 0, 0, 0, 1, 0, 0, 0, 40, 0, -1, 0 )
+shape = SubResource( 1 )
+
+[node name="grassField" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 40, 0, 0, 0, 1, 0, 0, 0, 40, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
