@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://github.com/Assertor1/Being-Ball">
-    <img src="Screenshots/vlcsnap-2021-05-02-17h29m11s448.png">
-    <img src="Screenshots/vlcsnap-2021-05-02-17h29m32s067.png">
+    <img src="image1.png">
+    <img src="image2.png">
   </a>
 
   <h3 align="center">Being Ball</h3>
